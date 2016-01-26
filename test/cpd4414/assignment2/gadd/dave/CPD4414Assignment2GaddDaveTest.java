@@ -132,7 +132,61 @@ public class CPD4414Assignment2GaddDaveTest {
         boolean result = instance.equals(instance);
         assertEquals(expResult,result);
         
+    
     }
+    @Test
+    public void testStudentEqualsMethodIDFalse(){
+        System.out.println("testStudentEqualsMethodIDFalse");
+        String name = "James Dean";
+        String number = "c0640891";
+        String gender = "male";
+        double grade = 80.00;
+        Student instance = new Student(name, number, gender, grade);
+        String name2 = "James Dean";
+        String number2 = "c0000000";
+        String gender2 = "male";
+        double grade2 = 80.00;
+        Student instance2 = new Student(name2, number2, gender2, grade2);
+        boolean expResult = false;
+        boolean result = instance.equals(instance2);
+        assertEquals(expResult,result);
+    }
+        @Test
+    public void testStudentEqualsMethodNameFalse(){
+        System.out.println("testStudentEqualsMethodNameFalse");
+        String name = "James Dean";
+        String number = "c0640891";
+        String gender = "male";
+        double grade = 80.00;
+        Student instance = new Student(name, number, gender, grade);
+        String name2 = "Cameron Clarke";
+        String number2 = "c060891";
+        String gender2 = "male";
+        double grade2 = 80.00;
+        Student instance2 = new Student(name2, number2, gender2, grade2);
+        boolean expResult = false;
+        boolean result = instance.equals(instance2);
+        assertEquals(expResult,result);
+    }
+    @Test
+    public void testStudentEqualsMethodBothFalse(){
+        System.out.println("testStudentEqualsMethodBothFalse");
+        String name = "James Dean";
+        String number = "c0640891";
+        String gender = "male";
+        double grade = 80.00;
+        Student instance = new Student(name, number, gender, grade);
+        String name2 = "Cameron Clarke";
+        String number2 = "c0000000";
+        String gender2 = "male";
+        double grade2 = 80.00;
+        Student instance2 = new Student(name2, number2, gender2, grade2);
+        boolean expResult = false;
+        boolean result = instance.equals(instance2);
+        assertEquals(expResult,result);
+    }
+
+
 }
     
 
