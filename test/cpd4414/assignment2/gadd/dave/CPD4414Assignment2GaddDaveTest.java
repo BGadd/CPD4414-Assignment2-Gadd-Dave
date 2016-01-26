@@ -83,7 +83,7 @@ public class CPD4414Assignment2GaddDaveTest {
         String result = instance.getId();
         assertEquals(expResult,result);
     }
-     @Test
+    @Test
     public void testStudentGetGender(){
         System.out.println("testStudentGetGender");
         String name = "James Dean";
@@ -95,7 +95,7 @@ public class CPD4414Assignment2GaddDaveTest {
         String result = instance.getGender();
         assertEquals(expResult,result);
     }
-     @Test
+    @Test
     public void testStudentGetGrade(){
         System.out.println("testStudentGetGrade");
         String name = "James Dean";
@@ -107,7 +107,32 @@ public class CPD4414Assignment2GaddDaveTest {
         double result = instance.getGrade();
         assertEquals(expResult,result);
     }
-    
+    @Test
+    public void testStudentEqualsFalse(){
+        System.out.println("testStudentEqualsMethodFalse");
+        String name = "James Dean";
+        String number = "c0640891";
+        String gender = "male";
+        double grade = 80.00;
+        Student instance = new Student(name, number, gender, grade);
+        Course instance2 = new Course();
+        boolean expResult = false;
+        boolean result = instance.equals(instance2);
+        assertEquals(expResult,result);
+    }
+    @Test
+    public void testStudentEqualsTrue(){
+        System.out.println("testStudentEqualsMethodTrue");
+         String name = "James Dean";
+        String number = "c0640891";
+        String gender = "male";
+        double grade = 80.00;
+        Student instance = new Student(name, number, gender, grade);
+        boolean expResult = true;
+        boolean result = instance.equals(instance);
+        assertEquals(expResult,result);
+        
+    }
 }
     
 
