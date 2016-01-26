@@ -41,12 +41,73 @@ public class CPD4414Assignment2GaddDaveTest {
      * Test of main method, of class CPD4414Assignment2GaddDave.
      */
     @Test
-    public void testMain() {
-        System.out.println("main");
-        String[] args = null;
-        CPD4414Assignment2GaddDave.main(args);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void testEmptyStudent(){
+        System.out.println("testEmptyStudentConstructor");
+        Student instance = new Student();
+        String expResult = "";
+        assertEquals(expResult, instance);
+    }
+    @Test
+    public void testStudentToString(){
+        System.out.println("testStudentToString");
+        String name = "James Dean";
+        String number = "c0640891";
+        String gender = "male";
+        double grade = 80.00;
+        Student instance = new Student(name,number,gender,grade);
+        String result = instance.toString();
+        String expResult = "{\"name\" : \"James Dean\", \"id\" : \"c0640891\", \"gender\" : \"male\", \"grade\" : 80.00}";
+        assertEquals(expResult,result);
+    }
+    @Test
+    public void testStudentGetName(){
+        System.out.println("testStudentGetName");
+        String name = "James Dean";
+        String number = "c0640891";
+        String gender = "male";
+        double grade = 80.00;
+        Student instance = new Student(name,number,gender,grade);
+        String expResult = "James Dean";
+        String result = instance.getName();
+        assertEquals(expResult,result);
+    }
+    @Test
+    public void testStudentGetNumber(){
+        System.out.println("testStudentGetID");
+        String name = "James Dean";
+        String number = "c0640891";
+        String gender = "male";
+        double grade = 80.00;
+        Student instance = new Student(name,number,gender,grade);
+        String expResult = "c0640891";
+        String result = instance.getId();
+        assertEquals(expResult,result);
+    }
+     @Test
+    public void testStudentGetGender(){
+        System.out.println("testStudentGetGender");
+        String name = "James Dean";
+        String number = "c0640891";
+        String gender = "male";
+        double grade = 80.00;
+        Student instance = new Student(name,number,gender,grade);
+        String expResult = "c0640891";
+        String result = instance.getGender();
+        assertEquals(expResult,result);
+    }
+     @Test
+    public void testStudentGetGrade(){
+        System.out.println("testStudentGetGrade");
+        String name = "James Dean";
+        String number = "c0640891";
+        String gender = "male";
+        double grade = 80.00;
+        Student instance = new Student(name,number,gender,grade);
+        double expResult = 80.00;
+        double result = instance.getGrade();
+        assertEquals(expResult,result);
     }
     
 }
+    
+
