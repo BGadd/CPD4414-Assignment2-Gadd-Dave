@@ -455,9 +455,8 @@ public class CPD4414Assignment2GaddDaveTest {
         fill.add(instance2);
         fill.add(stu);
         Course instance = new Course(fill);
-        String expResult = "{A=[], A+=[{ \"name\" : \"Ned Stark\", \"id\" : \"c0000001\", \"gender\" : \"male\", \"grade\" : 100.0 }], A-=[{ \"name\" : \"James Dean\", \"id\" : \"c0640891\", \"gender\" : \"male\", \"grade\" : 80.0 }], B=[], B+=[], B-=[], C=[], C+=[], C-=[], D=[], F=[]}";
-        Map<String, Set<Student>> result = instance.getGradeMap();
-        result.toString();
+        Map<String, Set<Student>> expResult;
+        Map<String, Set<Student>> result = instance.getGradeMap(); 
         assertEquals(expResult, result);
     }
 }
