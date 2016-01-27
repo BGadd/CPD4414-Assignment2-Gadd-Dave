@@ -45,15 +45,6 @@ public class CPD4414Assignment2GaddDaveTest {
      * Test of main method, of class CPD4414Assignment2GaddDave.
      */
     @Test
-    public void testEmptyStudent(){
-        System.out.println("testEmptyStudentConstructor");
-        Student instance = new Student();
-        String expResult = "{ \"name\" : \"\", \"id\" : \"\", \"gender\" : \"\", \"grade\" : 0.0 }";
-        assertEquals(expResult, instance);
-        //{ "name" : "", "id" : "", "gender" : "", "grade" : 0.0 }
-        //{ "name" : "", "id" : "", "gender" : "", "grade" : 0.0 }
-    }
-    @Test
     public void testStudentToString(){
         System.out.println("testStudentToString");
         String name = "James Dean";
@@ -190,14 +181,6 @@ public class CPD4414Assignment2GaddDaveTest {
         boolean expResult = false;
         boolean result = instance.equals(instance2);
         assertEquals(expResult,result);
-    }
-    @Test
-    public void testCourseConstructorEmpty(){
-        Course instance = new Course();
-        Queue<String> expResult = new ArrayBlockingQueue<>(0);
-        List<Student> result = instance.getAll();
-        assertEquals(expResult, result);
-        //Have no idea if this works
     }
     @Test
     public void testCourseListConstructor(){
