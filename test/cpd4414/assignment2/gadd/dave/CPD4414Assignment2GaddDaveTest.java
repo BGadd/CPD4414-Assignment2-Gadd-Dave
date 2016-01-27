@@ -215,7 +215,7 @@ public class CPD4414Assignment2GaddDaveTest {
         assertEquals(expResult, result);
     }
     @Test
-    public void testCourseRemove(){
+    public void testCourseRemoveStudent(){
         Student Student = new Student();
         List<Student> test = new ArrayList<Student>();
         List<Student> expResult = new ArrayList<Student>();
@@ -229,6 +229,63 @@ public class CPD4414Assignment2GaddDaveTest {
         expResult.add(Student2);
         Course instance = new Course(test);
         instance.remove(Student);
+        List<Student> result = instance.getAll();
+        assertEquals(expResult, result);
+    
+    }
+     @Test
+     public void testCourseRemoveString(){
+        Student Student = new Student();
+        List<Student> test = new ArrayList<Student>();
+        List<Student> expResult = new ArrayList<Student>();
+        test.add(Student);
+        String name = "James Dean";
+        String id = "c0640891";
+        String gender = "male";
+        double grade = 80.0;
+        Student Student2 = new Student(name,id,gender,grade);
+        test.add(Student2);
+        expResult.add(Student2);
+        Course instance = new Course(test);
+        instance.remove("");
+        List<Student> result = instance.getAll();
+        assertEquals(expResult, result);
+    
+    }
+      @Test
+      public void testCourseRemovePosition(){
+        Student Student = new Student();
+        List<Student> test = new ArrayList<Student>();
+        List<Student> expResult = new ArrayList<Student>();
+        test.add(Student);
+        String name = "James Dean";
+        String id = "c0640891";
+        String gender = "male";
+        double grade = 80.0;
+        Student Student2 = new Student(name,id,gender,grade);
+        test.add(Student2);
+        expResult.add(Student2);
+        Course instance = new Course(test);
+        instance.remove(0);
+        List<Student> result = instance.getAll();
+        assertEquals(expResult, result);
+    
+    }
+      @Test
+       public void testCourseInsertStudent(){
+        Student Student = new Student();
+        List<Student> test = new ArrayList<Student>();
+        List<Student> expResult = new ArrayList<Student>();
+        String name = "James Dean";
+        String id = "c0640891";
+        String gender = "male";
+        double grade = 80.0;
+        Student Student2 = new Student(name,id,gender,grade);
+        test.add(Student2);  
+        expResult.add(Student2);
+        Course instance = new Course(test);
+        instance.insert(Student, 1);
+        expResult.add(Student);
         List<Student> result = instance.getAll();
         assertEquals(expResult, result);
     
