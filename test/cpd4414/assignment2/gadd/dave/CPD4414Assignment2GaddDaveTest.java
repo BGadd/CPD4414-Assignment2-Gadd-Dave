@@ -288,7 +288,60 @@ public class CPD4414Assignment2GaddDaveTest {
         expResult.add(Student);
         List<Student> result = instance.getAll();
         assertEquals(expResult, result);
-    
+    }
+      @Test
+    public void testCourseGetString(){
+        String name = "James Dean";
+        String number = "c0640891";
+        String gender = "male";
+        double grade = 80.0;
+        Student instance2 = new Student(name,number,gender,grade);
+        List<Student> expResult = new ArrayList<Student>();
+        expResult.add(instance2);
+        Course instance = new Course(expResult);
+        Student result = instance.get(number);
+        assertEquals(instance2, result);
+    }
+      @Test
+    public void testCourseGetStringNull(){
+        String name = "James Dean";
+        String number = "c0640891";
+        String gender = "male";
+        double grade = 80.0;
+        Student instance2 = new Student(name,number,gender,grade);
+        List<Student> fill = new ArrayList<Student>();
+        fill.add(instance2);
+        Student expResult = null;
+        Course instance = new Course(fill);
+        Student result = instance.get("c000000");
+        assertEquals(expResult, result);
+    }
+    @Test
+    public void testCourseGetPosition(){
+        String name = "James Dean";
+        String number = "c0640891";
+        String gender = "male";
+        double grade = 80.0;
+        Student instance2 = new Student(name,number,gender,grade);
+        List<Student> expResult = new ArrayList<Student>();
+        expResult.add(instance2);
+        Course instance = new Course(expResult);
+        Student result = instance.get(0);
+        assertEquals(instance2, result);
+    }
+      @Test
+    public void testCourseGetPositionNull(){
+        String name = "James Dean";
+        String number = "c0640891";
+        String gender = "male";
+        double grade = 80.0;
+        Student instance2 = new Student(name,number,gender,grade);
+        List<Student> fill = new ArrayList<Student>();
+        fill.add(instance2);
+        Student expResult = null;
+        Course instance = new Course(fill);
+        Student result = instance.get(-1);
+        assertEquals(expResult, result);
     }
 }
     
