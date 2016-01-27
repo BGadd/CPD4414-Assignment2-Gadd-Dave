@@ -421,7 +421,7 @@ public class CPD4414Assignment2GaddDaveTest {
         List<Student> fill = new ArrayList<Student>();
         fill.add(instance2);
         Course instance = new Course(fill);
-        String expResult = "[\n{ \"name\" : \"James Dean\", \"id\" : \"c0640891\", \"gender\" : \"male\", \"grade\" : 80.0 },\n]";
+        String expResult = "[\n{ \"name\" : \"James Dean\", \"id\" : \"c0640891\", \"gender\" : \"male\", \"grade\" : 80.0 }\n]";
         String result = instance.toString();
         assertEquals(expResult, result);
     }
