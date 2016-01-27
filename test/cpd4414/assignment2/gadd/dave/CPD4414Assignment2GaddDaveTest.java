@@ -7,7 +7,9 @@ package cpd4414.assignment2.gadd.dave;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Queue;
+import java.util.Set;
 import java.util.concurrent.ArrayBlockingQueue;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -408,6 +410,54 @@ public class CPD4414Assignment2GaddDaveTest {
         Course course = new Course(fill2);
         boolean expResult = false;
         boolean result = instance.equals(course);
+        assertEquals(expResult, result);
+    }
+    @Test public void testCourseJSON(){
+        String name = "James Dean";
+        String number = "c0640891";
+        String gender = "male";
+        double grade = 80.0;
+        Student instance2 = new Student(name,number,gender,grade);
+        List<Student> fill = new ArrayList<Student>();
+        fill.add(instance2);
+        Course instance = new Course(fill);
+        String expResult = "[\n{ \"name\" : \"James Dean\", \"id\" : \"c0640891\", \"gender\" : \"male\", \"grade\" : 80.0 },\n]";
+        String result = instance.toString();
+        assertEquals(expResult, result);
+    }
+    @Test public void testCourseGetAllByGender(){
+        String name = "James Dean";
+        String number = "c0640891";
+        String gender = "male";
+        double grade = 80.0;
+        Student instance2 = new Student(name,number,gender,grade);
+        List<Student> fill = new ArrayList<Student>();
+        fill.add(instance2);
+        Course instance = new Course(fill);
+        String expResult = "[\n{ \"name\" : \"James Dean\", \"id\" : \"c0640891\", \"gender\" : \"male\", \"grade\" : 80.0 },\n]";
+        Set<Student> result = instance.getAllByGender(gender);
+        result.toString();
+        assertEquals(expResult, result);
+    }
+      @Test
+    public void testCourseMap(){
+        String name = "James Dean";
+        String number = "c0640891";
+        String gender = "male";
+        double grade = 80.0;
+        String n = "Ned Stark";
+        String id = "c0000001";
+        String g = "male";
+        double gr = 100.0;
+        Student instance2 = new Student(name,number,gender,grade);
+        Student stu = new Student(n,id,g,gr);
+        List<Student> fill = new ArrayList<Student>();
+        fill.add(instance2);
+        fill.add(stu);
+        Course instance = new Course(fill);
+        String expResult = "{A=[], A+=[{ \"name\" : \"Ned Stark\", \"id\" : \"c0000001\", \"gender\" : \"male\", \"grade\" : 100.0 }], A-=[{ \"name\" : \"James Dean\", \"id\" : \"c0640891\", \"gender\" : \"male\", \"grade\" : 80.0 }], B=[], B+=[], B-=[], C=[], C+=[], C-=[], D=[], F=[]}";
+        Map<String, Set<Student>> result = instance.getGradeMap();
+        result.toString();
         assertEquals(expResult, result);
     }
 }
