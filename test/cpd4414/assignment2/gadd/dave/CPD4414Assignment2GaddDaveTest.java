@@ -45,6 +45,16 @@ public class CPD4414Assignment2GaddDaveTest {
      * Test of main method, of class CPD4414Assignment2GaddDave.
      */
     @Test
+    public void testEmptyStudent(){
+        System.out.println("testEmptyStudentConstructor");
+        Student instance = new Student();
+        String result = instance.toString();
+        String expResult = "{ \"name\" : \"\", \"id\" : \"\", \"gender\" : \"\", \"grade\" : 0.0 }";
+        assertEquals(expResult, result);
+        //{ "name" : "", "id" : "", "gender" : "", "grade" : 0.0 }
+        //{ "name" : "", "id" : "", "gender" : "", "grade" : 0.0 }
+    }
+    @Test
     public void testStudentToString(){
         System.out.println("testStudentToString");
         String name = "James Dean";
