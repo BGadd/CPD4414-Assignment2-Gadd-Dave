@@ -371,6 +371,35 @@ public class CPD4414Assignment2GaddDaveTest {
         }
         assertEquals(expResult, result);
     }
+      @Test
+    public void testCourseEqualsFalse(){
+        String name = "James Dean";
+        String number = "c0640891";
+        String gender = "male";
+        double grade = 80.0;
+        Student instance2 = new Student(name,number,gender,grade);
+        List<Student> fill = new ArrayList<Student>();
+        fill.add(instance2);
+        Course instance = new Course(fill);
+        boolean expResult = false;
+        boolean result = instance.equals(instance2);
+        assertEquals(expResult, result);
+    }
+       @Test
+    public void testCourseEqualsTrue(){
+        String name = "James Dean";
+        String number = "c0640891";
+        String gender = "male";
+        double grade = 80.0;
+        Student instance2 = new Student(name,number,gender,grade);
+        List<Student> fill = new ArrayList<Student>();
+        fill.add(instance2);
+        Course instance = new Course(fill);
+        Course course = new Course(fill);
+        boolean expResult = true;
+        boolean result = instance.equals(course);
+        assertEquals(expResult, result);
+    }
 }
     
 
