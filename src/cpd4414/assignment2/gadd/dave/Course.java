@@ -57,6 +57,9 @@ public class Course {
         return null;
     }
     public Student get(int position) {
+        if (position < 0 || position >= students.size()) {
+            return null;
+        }
         return students.get(position);
     }
     public List<Student> getAll() {
