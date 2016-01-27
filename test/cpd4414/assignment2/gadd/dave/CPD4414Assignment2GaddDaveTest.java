@@ -363,12 +363,7 @@ public class CPD4414Assignment2GaddDaveTest {
         Course instance = new Course(fill);
         int pos = -1;
         String result ="";
-        if (pos < 0){
-            result =null;
-        }
-        else{
         instance.get(pos);
-        }
         assertEquals(expResult, result);
     }
       @Test
@@ -397,6 +392,28 @@ public class CPD4414Assignment2GaddDaveTest {
         Course instance = new Course(fill);
         Course course = new Course(fill);
         boolean expResult = true;
+        boolean result = instance.equals(course);
+        assertEquals(expResult, result);
+    }
+      @Test
+    public void testCourseDifferentStudentsEqualsFalse(){
+        String name = "James Dean";
+        String number = "c0640891";
+        String gender = "male";
+        double grade = 80.0;
+        String n = "Ned Stark";
+        String id = "c0000001";
+        String g = "male";
+        double gr = 100.0;
+        Student instance2 = new Student(name,number,gender,grade);
+        Student stu = new Student(n,id,g,gr);
+        List<Student> fill = new ArrayList<Student>();
+        List<Student> fill2 = new ArrayList<Student>();
+        fill2.add(stu);
+        fill.add(instance2);
+        Course instance = new Course(fill);
+        Course course = new Course(fill2);
+        boolean expResult = false;
         boolean result = instance.equals(course);
         assertEquals(expResult, result);
     }
