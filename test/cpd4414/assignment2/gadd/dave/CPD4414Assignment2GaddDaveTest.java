@@ -340,14 +340,8 @@ public class CPD4414Assignment2GaddDaveTest {
         fill.add(instance2);
         Student expResult = null;
         Course instance = new Course(fill);
-        int pos = 1;
-        String result ="";
-        if (pos >= fill.size()){
-            result =null;
-        }
-        else{
-        instance.get(pos);
-        }
+        int pos = 1; 
+        Student result = instance.get(pos);    
         assertEquals(expResult, result);
     }
       @Test
@@ -362,8 +356,7 @@ public class CPD4414Assignment2GaddDaveTest {
         Student expResult = null;
         Course instance = new Course(fill);
         int pos = -1;
-        String result ="";
-        instance.get(pos);
+        Student result = instance.get(pos);
         assertEquals(expResult, result);
     }
       @Test
