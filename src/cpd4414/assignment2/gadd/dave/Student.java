@@ -19,7 +19,7 @@ public class Student {
         name = "";
         id = "";
         gender = "";
-        grade = 0.00;
+        grade = 0.0;
     }
     public Student(String name, String id, String gender, double grade) {
         this.name = name;

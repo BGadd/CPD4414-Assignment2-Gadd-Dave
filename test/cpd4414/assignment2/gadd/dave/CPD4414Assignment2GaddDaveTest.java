@@ -47,7 +47,7 @@ public class CPD4414Assignment2GaddDaveTest {
     public void testEmptyStudent(){
         System.out.println("testEmptyStudentConstructor");
         Student instance = new Student();
-        String expResult = "";
+        String expResult = "{ \"name\" : \"\", \"id\" : \"\", \"gender\" : \"\", \"grade\" : 0.0 }";
         assertEquals(expResult, instance);
     }
     @Test
@@ -56,10 +56,10 @@ public class CPD4414Assignment2GaddDaveTest {
         String name = "James Dean";
         String number = "c0640891";
         String gender = "male";
-        double grade = 80.00;
+        double grade = 80.0;
         Student instance = new Student(name,number,gender,grade);
         String result = instance.toString();
-        String expResult = "{ \"name\" : \"James Dean\", \"id\" : \"c0640891\", \"gender\" : \"male\", \"grade\" : 80.00 }";
+        String expResult = "{ \"name\" : \"James Dean\", \"id\" : \"c0640891\", \"gender\" : \"male\", \"grade\" : 80.0 }";
         assertEquals(expResult,result);
     }
     @Test
@@ -108,7 +108,7 @@ public class CPD4414Assignment2GaddDaveTest {
         Student instance = new Student(name,number,gender,grade);
         double expResult = 80.00;
         double result = instance.getGrade();
-        assertEquals(expResult,result);
+        assertEquals(expResult,result,0);
     }
     @Test
     public void testStudentEqualsFalse(){
