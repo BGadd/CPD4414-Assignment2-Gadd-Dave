@@ -5,6 +5,7 @@
  */
 package cpd4414.assignment2.gadd.dave;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.ArrayBlockingQueue;
@@ -49,6 +50,8 @@ public class CPD4414Assignment2GaddDaveTest {
         Student instance = new Student();
         String expResult = "{ \"name\" : \"\", \"id\" : \"\", \"gender\" : \"\", \"grade\" : 0.0 }";
         assertEquals(expResult, instance);
+        //{ "name" : "", "id" : "", "gender" : "", "grade" : 0.0 }
+        //{ "name" : "", "id" : "", "gender" : "", "grade" : 0.0 }
     }
     @Test
     public void testStudentToString(){
@@ -196,7 +199,47 @@ public class CPD4414Assignment2GaddDaveTest {
         assertEquals(expResult, result);
         //Have no idea if this works
     }
- 
+    @Test
+    public void testCourseListConstructor(){
+        List<Student> expResult;
+        expResult = new ArrayList<>();
+        Course instance = new Course(expResult);
+        List<Student> result = instance.getAll();
+        assertEquals(expResult,result);
+    }
+    @Test
+    public void testCourseAdd(){
+        Course instance = new Course();
+        String name = "James Dean";
+        String number = "c0640891";
+        String gender = "male";
+        double grade = 80.0;
+        Student instance2 = new Student(name,number,gender,grade);
+        List<Student> expResult = new ArrayList<Student>();
+        expResult.add(instance2);
+        instance.add(instance2);
+        List<Student> result = instance.getAll();
+        assertEquals(expResult, result);
+    }
+    @Test
+    public void testCourseRemove(){
+        Student Student = new Student();
+        List<Student> test = new ArrayList<Student>();
+        List<Student> expResult = new ArrayList<Student>();
+        test.add(Student);
+        String name = "James Dean";
+        String id = "c0640891";
+        String gender = "male";
+        double grade = 80.0;
+        Student Student2 = new Student(name,id,gender,grade);
+        test.add(Student2);
+        expResult.add(Student2);
+        Course instance = new Course(test);
+        instance.remove(Student);
+        List<Student> result = instance.getAll();
+        assertEquals(expResult, result);
+    
+    }
 }
     
 
