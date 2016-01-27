@@ -5,6 +5,9 @@
  */
 package cpd4414.assignment2.gadd.dave;
 
+import java.util.List;
+import java.util.Queue;
+import java.util.concurrent.ArrayBlockingQueue;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -56,7 +59,7 @@ public class CPD4414Assignment2GaddDaveTest {
         double grade = 80.00;
         Student instance = new Student(name,number,gender,grade);
         String result = instance.toString();
-        String expResult = "{\"name\" : \"James Dean\", \"id\" : \"c0640891\", \"gender\" : \"male\", \"grade\" : 80.00}";
+        String expResult = "{ \"name\" : \"James Dean\", \"id\" : \"c0640891\", \"gender\" : \"male\", \"grade\" : 80.00 }";
         assertEquals(expResult,result);
     }
     @Test
@@ -91,7 +94,7 @@ public class CPD4414Assignment2GaddDaveTest {
         String gender = "male";
         double grade = 80.00;
         Student instance = new Student(name,number,gender,grade);
-        String expResult = "c0640891";
+        String expResult = "male";
         String result = instance.getGender();
         assertEquals(expResult,result);
     }
@@ -123,7 +126,7 @@ public class CPD4414Assignment2GaddDaveTest {
     @Test
     public void testStudentEqualsTrue(){
         System.out.println("testStudentEqualsMethodTrue");
-         String name = "James Dean";
+        String name = "James Dean";
         String number = "c0640891";
         String gender = "male";
         double grade = 80.00;
@@ -185,8 +188,15 @@ public class CPD4414Assignment2GaddDaveTest {
         boolean result = instance.equals(instance2);
         assertEquals(expResult,result);
     }
-
-
+    @Test
+    public void testCourseConstructorEmpty(){
+        Course instance = new Course();
+        Queue<String> expResult = new ArrayBlockingQueue<>(0);
+        List<Student> result = instance.getAll();
+        assertEquals(expResult, result);
+        //Have no idea if this works
+    }
+ 
 }
     
 
