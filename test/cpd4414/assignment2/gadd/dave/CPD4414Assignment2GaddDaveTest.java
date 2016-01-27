@@ -340,7 +340,35 @@ public class CPD4414Assignment2GaddDaveTest {
         fill.add(instance2);
         Student expResult = null;
         Course instance = new Course(fill);
-        Student result = instance.get(-1);
+        int pos = 1;
+        String result ="";
+        if (pos >= fill.size()){
+            result =null;
+        }
+        else{
+        instance.get(pos);
+        }
+        assertEquals(expResult, result);
+    }
+      @Test
+    public void testCourseGetPositionLessThanZeroNull(){
+        String name = "James Dean";
+        String number = "c0640891";
+        String gender = "male";
+        double grade = 80.0;
+        Student instance2 = new Student(name,number,gender,grade);
+        List<Student> fill = new ArrayList<Student>();
+        fill.add(instance2);
+        Student expResult = null;
+        Course instance = new Course(fill);
+        int pos = -1;
+        String result ="";
+        if (pos < 0){
+            result =null;
+        }
+        else{
+        instance.get(pos);
+        }
         assertEquals(expResult, result);
     }
 }
