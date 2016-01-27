@@ -78,9 +78,10 @@ public class Course {
     @Override
     public String toString() {
         String output = "[\n";
-        for (int a = 0; a < students.size(); a++) {
+        for (int a = 0; a < students.size()-1; a++) {
             output += "{ \"name\" : \"" + students.get(a).getName() + "\", \"id\" : \"" + students.get(a).getId() + "\", \"gender\" : \"" + students.get(a).getGender() + "\", \"grade\" : " + students.get(a).getGrade() + " },\n";
         }
+        output += "{ \"name\" : \"" + students.get(students.size()-1).getName() + "\", \"id\" : \"" + students.get(students.size()-1).getId() + "\", \"gender\" : \"" + students.get(students.size()-1).getGender() + "\", \"grade\" : " + students.get(students.size()-1).getGrade() + " }\n";
         output += "]";
         return output;
     }
