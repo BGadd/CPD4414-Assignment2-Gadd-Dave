@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.Set;
 import java.util.HashSet;
+import java.util.TreeMap;
 
 /**
  *
@@ -91,6 +92,54 @@ public class Course {
         return studentSet;
     }
     public Map<String, Set<Student>> getGradeMap() {
-        
+        Map<String, Set<Student>> gradeMap = new TreeMap<>();
+        Set<Student> aPlusSet = new HashSet<>();
+        Set<Student> aSet = new HashSet<>();
+        Set<Student> aMinSet = new HashSet<>();
+        Set<Student> bPlusSet = new HashSet<>();
+        Set<Student> bSet = new HashSet<>();
+        Set<Student> bMinSet = new HashSet<>();
+        Set<Student> cPlusSet = new HashSet<>();
+        Set<Student> cSet = new HashSet<>();
+        Set<Student> cMinSet = new HashSet<>();
+        Set<Student> dSet = new HashSet<>();
+        Set<Student> fSet = new HashSet<>();
+        for (int a = 0; a < students.size(); a++) {
+            if (students.get(a).getGrade() < 101 && students.get(a).getGrade() >= 94) {
+                aPlusSet.add(students.get(a));
+            } else if (students.get(a).getGrade() < 94 && students.get(a).getGrade() >= 87) {
+                aSet.add(students.get(a));
+            } else if (students.get(a).getGrade() < 87 && students.get(a).getGrade() >= 80) {
+                aMinSet.add(students.get(a));
+            } else if (students.get(a).getGrade() < 80 && students.get(a).getGrade() >= 77) {
+                bPlusSet.add(students.get(a));
+            } else if (students.get(a).getGrade() < 77 && students.get(a).getGrade() >= 73) {
+                bSet.add(students.get(a));
+            } else if (students.get(a).getGrade() < 73 && students.get(a).getGrade() >= 70) {
+                bMinSet.add(students.get(a));
+            } else if (students.get(a).getGrade() < 70 && students.get(a).getGrade() >= 67) {
+                cPlusSet.add(students.get(a));
+            } else if (students.get(a).getGrade() < 67 && students.get(a).getGrade() >= 63) {
+                cSet.add(students.get(a));
+            } else if (students.get(a).getGrade() < 63 && students.get(a).getGrade() >= 60) {
+                cMinSet.add(students.get(a));
+            } else if (students.get(a).getGrade() < 60 && students.get(a).getGrade() >= 50) {
+                dSet.add(students.get(a));
+            } else if (students.get(a).getGrade() < 50 && students.get(a).getGrade() >= 0) {
+                fSet.add(students.get(a));
+            } 
+        }
+        gradeMap.put("A+", aPlusSet);
+        gradeMap.put("A", aSet);
+        gradeMap.put("A-", aMinSet);
+        gradeMap.put("B+", bPlusSet);
+        gradeMap.put("B", bSet);
+        gradeMap.put("B-", bMinSet);
+        gradeMap.put("C+", cPlusSet);
+        gradeMap.put("C", cSet);
+        gradeMap.put("C-", cMinSet);
+        gradeMap.put("D", dSet);
+        gradeMap.put("F", fSet);
+        return gradeMap;
     }
 }
