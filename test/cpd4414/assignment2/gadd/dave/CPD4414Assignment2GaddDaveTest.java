@@ -4,13 +4,13 @@
  * and open the template in the editor.
  */
 package cpd4414.assignment2.gadd.dave;
-
+//import com.google.common.base.Splitter;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Queue;
 import java.util.Set;
-import java.util.concurrent.ArrayBlockingQueue;
+import java.util.TreeMap;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -434,9 +434,9 @@ public class CPD4414Assignment2GaddDaveTest {
         List<Student> fill = new ArrayList<Student>();
         fill.add(instance2);
         Course instance = new Course(fill);
-        String expResult = "[\n{ \"name\" : \"James Dean\", \"id\" : \"c0640891\", \"gender\" : \"male\", \"grade\" : 80.0 },\n]";
+        Set<Student> expResult = new HashSet<>();
+        expResult.add(instance2);
         Set<Student> result = instance.getAllByGender(gender);
-        result.toString();
         assertEquals(expResult, result);
     }
       @Test
@@ -444,19 +444,62 @@ public class CPD4414Assignment2GaddDaveTest {
         String name = "James Dean";
         String number = "c0640891";
         String gender = "male";
-        double grade = 80.0;
-        String n = "Ned Stark";
-        String id = "c0000001";
-        String g = "male";
-        double gr = 100.0;
+        double grade = 40.7;
         Student instance2 = new Student(name,number,gender,grade);
-        Student stu = new Student(n,id,g,gr);
         List<Student> fill = new ArrayList<Student>();
         fill.add(instance2);
-        fill.add(stu);
         Course instance = new Course(fill);
-        Map<String, Set<Student>> expResult;
         Map<String, Set<Student>> result = instance.getGradeMap(); 
+        Map<String, Set<Student>> expResult = new TreeMap<>();
+        List<Student> students = new ArrayList<>();
+        students.add(instance2);
+         Set<Student> aPlusSet = new HashSet<>();
+        Set<Student> aSet = new HashSet<>();
+        Set<Student> aMinSet = new HashSet<>();
+        Set<Student> bPlusSet = new HashSet<>();
+        Set<Student> bSet = new HashSet<>();
+        Set<Student> bMinSet = new HashSet<>();
+        Set<Student> cPlusSet = new HashSet<>();
+        Set<Student> cSet = new HashSet<>();
+        Set<Student> cMinSet = new HashSet<>();
+        Set<Student> dSet = new HashSet<>();
+        Set<Student> fSet = new HashSet<>();
+        for (int a = 0; a < students.size(); a++) {
+            if (students.get(a).getGrade() < 101 && students.get(a).getGrade() >= 94) {
+                aPlusSet.add(students.get(a));
+            } else if (students.get(a).getGrade() < 94.0 && students.get(a).getGrade() >= 87) {
+                aSet.add(students.get(a));
+            } else if (students.get(a).getGrade() < 87.0 && students.get(a).getGrade() >= 80) {
+                aMinSet.add(students.get(a));
+            } else if (students.get(a).getGrade() < 80.0 && students.get(a).getGrade() >= 77) {
+                bPlusSet.add(students.get(a));
+            } else if (students.get(a).getGrade() < 77.0 && students.get(a).getGrade() >= 73) {
+                bSet.add(students.get(a));
+            } else if (students.get(a).getGrade() < 73.0 && students.get(a).getGrade() >= 70) {
+                bMinSet.add(students.get(a));
+            } else if (students.get(a).getGrade() < 70.0 && students.get(a).getGrade() >= 67) {
+                cPlusSet.add(students.get(a));
+            } else if (students.get(a).getGrade() < 67.0 && students.get(a).getGrade() >= 63) {
+                cSet.add(students.get(a));
+            } else if (students.get(a).getGrade() < 63.0 && students.get(a).getGrade() >= 60) {
+                cMinSet.add(students.get(a));
+            } else if (students.get(a).getGrade() < 60.0 && students.get(a).getGrade() >= 50) {
+                dSet.add(students.get(a));
+            } else if (students.get(a).getGrade() < 50.0 && students.get(a).getGrade() >= 0) {
+                fSet.add(students.get(a));
+            } 
+        }
+        expResult.put("A+", aPlusSet);
+        expResult.put("A", aSet);
+        expResult.put("A-", aMinSet);
+        expResult.put("B+", bPlusSet);
+        expResult.put("B", bSet);
+        expResult.put("B-", bMinSet);
+        expResult.put("C+", cPlusSet);
+        expResult.put("C", cSet);
+        expResult.put("C-", cMinSet);
+        expResult.put("D", dSet);
+        expResult.put("F", fSet);
         assertEquals(expResult, result);
     }
 }

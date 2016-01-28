@@ -111,25 +111,25 @@ public class Course {
         for (int a = 0; a < students.size(); a++) {
             if (students.get(a).getGrade() < 101 && students.get(a).getGrade() >= 94) {
                 aPlusSet.add(students.get(a));
-            } else if (students.get(a).getGrade() < 94 && students.get(a).getGrade() >= 87) {
+            } else if (students.get(a).getGrade() < 94.0 && students.get(a).getGrade() >= 87) {
                 aSet.add(students.get(a));
-            } else if (students.get(a).getGrade() < 87 && students.get(a).getGrade() >= 80) {
+            } else if (students.get(a).getGrade() < 87.0 && students.get(a).getGrade() >= 80) {
                 aMinSet.add(students.get(a));
-            } else if (students.get(a).getGrade() < 80 && students.get(a).getGrade() >= 77) {
+            } else if (students.get(a).getGrade() < 80.0 && students.get(a).getGrade() >= 77) {
                 bPlusSet.add(students.get(a));
-            } else if (students.get(a).getGrade() < 77 && students.get(a).getGrade() >= 73) {
+            } else if (students.get(a).getGrade() < 77.0 && students.get(a).getGrade() >= 73) {
                 bSet.add(students.get(a));
-            } else if (students.get(a).getGrade() < 73 && students.get(a).getGrade() >= 70) {
+            } else if (students.get(a).getGrade() < 73.0 && students.get(a).getGrade() >= 70) {
                 bMinSet.add(students.get(a));
-            } else if (students.get(a).getGrade() < 70 && students.get(a).getGrade() >= 67) {
+            } else if (students.get(a).getGrade() < 70.0 && students.get(a).getGrade() >= 67) {
                 cPlusSet.add(students.get(a));
-            } else if (students.get(a).getGrade() < 67 && students.get(a).getGrade() >= 63) {
+            } else if (students.get(a).getGrade() < 67.0 && students.get(a).getGrade() >= 63) {
                 cSet.add(students.get(a));
-            } else if (students.get(a).getGrade() < 63 && students.get(a).getGrade() >= 60) {
+            } else if (students.get(a).getGrade() < 63.0 && students.get(a).getGrade() >= 60) {
                 cMinSet.add(students.get(a));
-            } else if (students.get(a).getGrade() < 60 && students.get(a).getGrade() >= 50) {
+            } else if (students.get(a).getGrade() < 60.0 && students.get(a).getGrade() >= 50) {
                 dSet.add(students.get(a));
-            } else if (students.get(a).getGrade() < 50 && students.get(a).getGrade() >= 0) {
+            } else if (students.get(a).getGrade() < 50.0 && students.get(a).getGrade() >= 0) {
                 fSet.add(students.get(a));
             } 
         }
